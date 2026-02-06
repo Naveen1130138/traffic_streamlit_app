@@ -86,15 +86,6 @@ weather_avg.plot(kind='barh', ax=ax)
 ax.set_xlabel("Traffic Volume")
 st.pyplot(fig)
 
-st.subheader("🔥 Correlation Heatmap")
-
-numeric_df = filtered_df.select_dtypes(include=np.number)
-corr = numeric_df.corr()
-
-fig, ax = plt.subplots(figsize=(8,5))
-sns.heatmap(corr, annot=True, cmap='coolwarm', ax=ax)
-st.pyplot(fig)
-
 st.subheader("📄 Dataset Preview")
 st.dataframe(filtered_df.head(50))
 
@@ -106,4 +97,5 @@ st.markdown("""
 - Clear weather conditions are associated with higher traffic volume.
 - Temporal variables have a stronger influence on traffic than weather variables.
 """)
+
 
